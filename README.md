@@ -1,5 +1,5 @@
 # Bay Area Startup Office Space Study
-PLEASE SEE MINI REPORT IN THE REPORT FILE FOR IN DEPTH FINDINGS
+PLEASE SEE MINI REPORT IN THE REPORT FILE FOR IN DEPTH FINDINGS.
 This project researches whether seed funding differs between Bay Area startups using shared vs. private office spaces. It also explores whether documented prior founder experience is associated with funding outcomes.
 
 ## Dataset
