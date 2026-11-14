@@ -1,37 +1,33 @@
-# Office Space and Seed Funding Among Bay Area Startups
+# Office Space, Founder Experience, and Seed Funding in Bay Area Startups
 
-## Mini research report
+## Executive summary
 
-### Executive summary
+This project was an exploratory study on a random sample of 50 Bay Area based startups on whether seed funding differed between Bay Area startups using shared or private office spaces, as well as founder experience.
 
-This project examined whether seed funding differed between Bay Area startups using private office space and startups using shared office space. The final analysis included 50 startups, of which 35 were classified as private-office companies and 15 as shared-office companies. The dataset also recorded whether at least one founder had documented prior startup-founder experience.
+In this sample, private-office companies overall had higher funding than shared-office companies on both the mean and median measures. Mean seed funding was $8.32 million for private-office companies and $3.08 million for shared-office companies, and median funding was $5.30 million and $2.40 million, respectively. A log-funding regression adjusted for funding year estimated that shared-office companies raised approximately 66.7% less than private-office companies, with p = 0.0166. For example, if a comparable private-office company was predicted to raise $6 million, the model would predict roughly $2 million for the shared-office company.
 
-In this sample, private-office companies had higher funding than shared-office companies on both the mean and median measures. Mean seed funding was $8.32 million for private-office companies and $3.08 million for shared-office companies. Median funding was $5.30 million and $2.40 million, respectively. A log-funding regression adjusted for funding year estimated that shared-office companies raised approximately 66.7% less than private-office companies, with p = 0.0166.
-
-The founder-experience variable showed little relationship with funding. The office-space difference remained visible in the four-group comparison, but the interaction between office type and founder experience was not statistically significant. These results indicate an association in this collected sample, not a causal effect of office type. Company age, industry, founder quality, investor networks, geography, and selection into office type may explain part or all of the observed difference.
+The founder-experience variable showed little relationship with funding (interesting). The office-space difference remained visible in the four-group comparison, but the interaction between office type and founder experience was not statistically significant. These results merely indicate an association in this collected sample. There are many other variables that go into seed funding that I did not account for.
 
 ## 1. Research question and hypothesis
 
-**Research question:** Among Bay Area startups, is seed funding systematically different for companies using shared office space compared with companies using private office space?
+**Research question:** Among Bay Area startups, is seed funding systematically different for companies using shared office space compared with companies using private office spaces, and does founder experience have an association as well (secondary)?
 
 **Primary hypothesis:** Startups using private office space will have higher seed funding than startups using shared office space.
 
-**Secondary question:** Is documented prior founder experience associated with seed funding, and does it change the relationship between office type and funding?
+**Side question:** Is documented prior founder experience associated with seed funding, and does it change the relationship between office type and funding?
 
 ## 2. Data and measurement
 
-The final master dataset contains 50 startups with publicly documented information about office location, office type, seed funding, funding year, and founders.
+The final master dataset contains 50 startups with publicly documented information about office location, office type, seed funding, funding year, and founders. This data was scraped, audited, and verified from public domain using Python scripts and AI, as well as some manual review.
 
 | Variable | Operational definition |
 |---|---|
-| Office type | `private` if the company appeared to operate from its own office; `shared` if it operated from a coworking or shared-workspace environment |
-| Seed funding | Amount reported for the identified seed round, in U.S. dollars |
-| Funding year | Year associated with the identified seed round; observations span 2023-2026 |
-| Prior founder experience | `1` if at least one founder had documented evidence of previously founding a startup; `0` if no documented evidence was found |
+| Office type | `private` if the company had their own office and `shared` if it operated from a shared-workspace environment |
+| Seed funding | Amount (USD) reported for the identified seed round |
+| Funding year | Year associated with the identified seed round (2023-2026) |
+| Prior founder experience | `1` if one or more founders had documented evidence of previously founding a startup, `0` if no documented evidence was found |
 
-The founder variable should be interpreted carefully: a value of `0` means no documented evidence was found in the reviewed sources, not proof that no founder had ever started a company.
-
-## 3. Sample composition
+## 3. Sample Summary
 
 | Office type | Companies | Share of sample | Mean funding | Median funding |
 |---|---:|---:|---:|---:|
@@ -39,11 +35,18 @@ The founder variable should be interpreted carefully: a value of `0` means no do
 | Shared | 15 | 30% | $3.08M | $2.40M |
 | **Total** | **50** | **100%** | **$6.81M** | **$3.50M** |
 
-Founder experience was coded as documented prior experience for 26 companies and no documented prior experience for 24 companies.
+For founder experience, in total we had 26 companies with a  `1` and 24 with a `0`.
 
-## 4. Descriptive findings
+| Founder experience | Companies | Mean funding | Median funding |
+|---|---:|---:|---:|
+| Prior founder experience | 26 | $6.49M | $5.15M |
+| No documented prior experience | 24 | $7.02M | $3.50M |
 
-Private-office companies raised approximately 2.7 times as much as shared-office companies on the mean measure and approximately 2.2 times as much on the median measure. The mean difference is influenced by several large private-office funding rounds, so the median is also reported as a more robust comparison.
+The mean funding was slightly higher for companies without documented prior founder experience, while the median funding was higher for companies with prior experience. Interesting, but probably not very statistically significant.
+
+## 4. Findings
+
+Private-office companies raised approximately 2.7 times as much as shared-office companies on the mean measure and approximately 2.2 times as much on the median measure. In this sample, and probably more generally, the mean difference is influenced by very large seed funding rounds, so median is probably a more accurate measure here.
 
 | Comparison | Private / prior experience | Private / no documented experience | Shared / no documented experience | Shared / prior experience |
 |---|---:|---:|---:|---:|
@@ -51,24 +54,24 @@ Private-office companies raised approximately 2.7 times as much as shared-office
 | Mean funding | $8.40M | $8.24M | $3.34M | $2.90M |
 | Median funding | $6.00M | $3.50M | $2.70M | $2.00M |
 
-Within private offices, the median difference between companies with and without documented founder experience was modest relative to the office-type difference. Within shared offices, the prior-experience group had a slightly lower median, although the shared/no-experience group was small.
+Within private offices, the median difference between companies with and without documented founder experience was modest relative to the office-type difference. Within shared offices, the prior-experience group had a slightly lower median, although the shared/no-experience group was small. I cannot confidently say that there is any clear association between all 3 variables.
 
-## 5. Regression results
+## 5. Modelling Results
 
-The primary model estimated log seed funding as a function of office type and funding-year indicators, using private office and 2023 as reference categories. The interaction model added founder experience and the office-type-by-founder-experience interaction.
+The primary model estimated log seed funding as a function of office type and funding-year indicators, using private office and 2023 as reference categories just for fun. The interaction model added founder experience and the office-type-by-founder-experience interaction. The only real correlation we have here would be shared vs. private office spaces with funding raised.
 
 | Term | Estimated percentage difference | p-value | Interpretation |
 |---|---:|---:|---|
 | Shared office | -66.7% | 0.0166 | Shared-office companies had lower predicted funding than private-office companies at the reference founder-experience level |
 | Prior founder experience | -1.0% | 0.9744 | No detectable independent funding difference in this sample |
 | Shared office × prior experience | +23.4% | 0.7205 | No evidence that founder experience meaningfully changed the office-type relationship |
-| 2024 vs. 2023 | -17.3% | 0.7304 | Not statistically significant |
-| 2025 vs. 2023 | +28.9% | 0.6332 | Not statistically significant |
-| 2026 vs. 2023 | +142.6% | 0.0940 | Suggestive but imprecise; likely affected by small year-specific counts |
+| 2024 vs. 2023 | -17.3% | 0.7304 | Just for fun |
+| 2025 vs. 2023 | +28.9% | 0.6332 | Just for fun |
+| 2026 vs. 2023 | +142.6% | 0.0940 | Just for fun |
 
-For founders without documented prior experience, the estimated shared-office difference was approximately -66.7%. For founders with documented prior experience, combining the shared-office and interaction coefficients gives an estimated difference of approximately -58.9%. The interaction p-value indicates that these two estimates should not be treated as meaningfully different based on this sample.
+For founders without documented prior experience, the estimated shared-office difference was approximately -66.7%. For founders with documented prior experience, combining the shared-office and interaction coefficients gives an estimated difference of approximately -58.9%. The interaction p-value indicates that these two estimates should not be treated as meaningfully different based on this sample. There are some figures in the `outputs` folder, feel free to take a look at them!
 
-## 6. Robustness checks
+## 6. Modelling Verification
 
 Because funding amounts are skewed, the analysis included medians, bootstrap intervals, and a Mann-Whitney test.
 
@@ -85,28 +88,25 @@ The private-office funding advantage remained after removing the three largest r
 
 ## 7. Interpretation
 
-The collected data are consistent with the primary hypothesis: private-office startups raised more seed funding than shared-office startups in this sample. The result is visible in the raw means, medians, four-group comparison, adjusted regression, and nonparametric test.
+Our findings are consistent with the primary hypothesis as private-office startups raised more seed funding than shared-office startups in this sample. The result is visible in pretty much all of the modelling. For our side question, we didn't find any meaningful relationship between founder experience and seed funding raised. One way to look at this is that not having experience shouldn't deter anyone from striving to be a founder, chase your dreams!
 
-However, the analysis cannot establish that private offices cause startups to raise more money. A likely alternative explanation is selection: companies that already have stronger financing, larger teams, different industries, or more established operations may be more likely to use private offices. The office type may therefore be a marker of company resources rather than the cause of the funding outcome.
-
-Founder experience did not show a meaningful independent relationship with seed funding, and there was no reliable evidence that it changed the relationship between office type and funding.
+Back to the main question. The analysis cannot establish that private offices cause startups to raise more money. A likely alternative explanation is that companies that already have stronger financing, larger teams, different industries, or more established operations may be more likely to use private offices. The office type may therefore be a marker of company resources rather than the cause of the funding outcome (definitely most likely).
 
 ## 8. Limitations
 
-1. The sample is observational and not randomly assigned to office types.
+1. The sample is observational.
 2. The 50 companies were collected from publicly available sources and may not represent all Bay Area startups.
-3. Shared versus private office classification can be difficult when companies list only a building or mailing address.
-4. Funding amounts and round labels may differ in reporting quality across sources.
-5. Founder experience is based on documented evidence and may undercount experience that was not publicly visible.
-6. The shared-office group is smaller than the private-office group, and some four-group cells are small.
-7. Funding years span 2023-2026, so market conditions may differ across observations.
+3. Funding amounts and round labels may differ in reporting quality across sources.
+4. Founder experience is based on documented evidence and may undercount experience that was not publicly visible.
+5. The shared-office group is smaller than the private-office group.
+6. Funding years span 2023-2026, so market conditions may differ across observations. This was for the sake of finding a large enough random sample to study.
 
 ## 9. Reproducibility
 
-The project includes Python and R workflows. From the project root, the R workflow can be run with:
+The project includes Python and R workflows. The files are in the repository. For the scripts in R, run:
 
 ```r
 source("R/run_all.R")
 ```
 
-The master data, source/audit fields, scripts, model outputs, and figures are stored in the project folders. The study should be described as an exploratory observational analysis rather than a causal estimate.
+The master data, source/audit fields, scripts, model outputs, and figures are stored in the project folders. The study should be described as an exploratory observational analysis.
