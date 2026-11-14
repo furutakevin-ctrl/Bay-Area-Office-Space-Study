@@ -1,0 +1,15 @@
+analysis,grouping_variable,group,company_count,mean_funding_usd,mean_ci_low,mean_ci_high,median_funding_usd,median_ci_low,median_ci_high,test_statistic,p_value,excluded_largest_rounds
+bootstrap_group_summary,office_space_type,private,35,8318857.142857143,5865714.285714285,11192028.57142857,5300000.0,3500000.0,7000000.0,,,
+bootstrap_group_summary,office_space_type,shared,15,3075000.0,1789958.3333333333,4493374.999999999,2400000.0,500000.0,5000000.0,,,
+mann_whitney_test,office_space_type,private_vs_shared,50,,,,,,,408.0,0.0021212326509688225,
+bootstrap_group_summary,prior_founder_experience,no_prior_experience,24,7017708.333333333,4229140.625,10642890.624999998,3500000.0,3200000.0,7000000.0,,,
+bootstrap_group_summary,prior_founder_experience,prior_experience,26,6494615.384615385,4261442.307692308,9350096.153846152,5150000.0,3100000.0,6500000.0,,,
+mann_whitney_test,prior_founder_experience,0_vs_1,50,,,,,,,303.0,0.8687715765702068,
+outlier_sensitivity,office_space_type,private,35,8318857.142857143,,,5300000.0,,,,,0.0
+outlier_sensitivity,office_space_type,shared,15,3075000.0,,,2400000.0,,,,,0.0
+outlier_sensitivity,office_space_type,private,34,7534117.647058823,,,5050000.0,,,,,1.0
+outlier_sensitivity,office_space_type,shared,15,3075000.0,,,2400000.0,,,,,1.0
+outlier_sensitivity,office_space_type,private,33,6853333.333333333,,,4800000.0,,,,,2.0
+outlier_sensitivity,office_space_type,shared,15,3075000.0,,,2400000.0,,,,,2.0
+outlier_sensitivity,office_space_type,private,32,6223750.0,,,4500000.0,,,,,3.0
+outlier_sensitivity,office_space_type,shared,15,3075000.0,,,2400000.0,,,,,3.0

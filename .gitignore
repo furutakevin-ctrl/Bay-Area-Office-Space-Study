@@ -1,0 +1,10 @@
+# Python/R-generated files
+__pycache__/
+*.py[cod]
+.Rhistory
+.RData
+.Rproj.user/
+
+# Keep generated figures and processed CSV outputs in the project for this study.
+# Add large temporary downloads here if you create them locally.
+*.log

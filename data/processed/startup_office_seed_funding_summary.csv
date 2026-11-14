@@ -1,0 +1,3 @@
+office_space_type,company_count,mean_funding_usd,median_funding_usd,minimum_funding_usd,maximum_funding_usd,standard_deviation_usd
+private,35,8318857.142857143,5300000.0,1300000,35000000,8273222.493089864
+shared,15,3075000.0,2400000.0,125000,9000000,2789281.141390069

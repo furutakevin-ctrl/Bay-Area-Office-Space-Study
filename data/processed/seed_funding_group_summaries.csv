@@ -1,0 +1,5 @@
+grouping_variable,group,company_count,mean_seed_funding_usd,median_seed_funding_usd,minimum_seed_funding_usd,maximum_seed_funding_usd,standard_deviation_usd
+office_space_type,private,35,8318857.142857143,5300000.0,1300000,35000000,8273222.493089864
+office_space_type,shared,15,3075000.0,2400000.0,125000,9000000,2789281.141390069
+prior_founder_experience,No documented prior founder experience,24,7017708.333333333,3500000.0,125000,35000000,8228973.465903036
+prior_founder_experience,Prior founder experience,26,6494615.384615385,5150000.0,500000,30000000,6823309.596240951

@@ -1,0 +1,5 @@
+office_space_type,prior_founder_experience,company_count,mean_seed_funding_usd,median_seed_funding_usd
+private,0,18,8244444.444444444,3500000.0
+private,1,17,8397647.05882353,6000000.0
+shared,0,6,3337500.0,2700000.0
+shared,1,9,2900000.0,2000000.0

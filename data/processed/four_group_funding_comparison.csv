@@ -1,0 +1,5 @@
+office_space_type,prior_founder_experience,prior_founder_experience_label,company_count,mean_seed_funding_usd,median_seed_funding_usd,mean_log_seed_funding,minimum_seed_funding_usd,maximum_seed_funding_usd,group_label,median_ratio_vs_private_no_experience
+private,1,Prior founder experience,17,8397647.05882353,6000000.0,15.639450926737876,1300000,30000000,Private office / Prior founder experience,1.7142857142857142
+private,0,No documented prior experience,18,8244444.444444444,3500000.0,15.54406491864049,2000000,35000000,Private office / No documented prior experience,1.0
+shared,0,No documented prior experience,6,3337500.0,2700000.0,14.316869690223031,125000,9000000,Shared office / No documented prior experience,0.7714285714285715
+shared,1,Prior founder experience,9,2900000.0,2000000.0,14.411483215945632,500000,7300000,Shared office / Prior founder experience,0.5714285714285714
